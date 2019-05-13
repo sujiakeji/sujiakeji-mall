@@ -1,0 +1,31 @@
+server:
+  port: 10300
+
+spring:
+  application:
+    name: sujiakeji-mall
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: dev
+    password: dev
+
+storage:
+  baseUrl: http://${STORAGE_HOST}:${STORAGE_PORT}
+
+merService:
+  baseUrl: http://sujiakeji-merchant
+
+userService:
+  baseUrl: http://sujiakeji-user
+
+logging:
+  level:
+    root: WARN
+    com.sujiakeji.mall.mapper: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
